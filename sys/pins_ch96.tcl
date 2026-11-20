@@ -1,5 +1,7 @@
 #============================================================================
-# Chameleon96 FPGA pin assignments (all 1.8V I/O)
+# Chameleon96 FPGA pin assignments.
+# LCD/I2S/I2C are 1.8V; the RF LEDs (Y19/Y20) sit on the 2.5V bank and use
+# the bank default IO standard (mirrors hps-ch96 reference design).
 #============================================================================
 
 set_location_assignment PIN_AA6  -to LCD_R[4]
@@ -31,6 +33,9 @@ set_location_assignment PIN_V9   -to I2S_TXFS
 
 set_location_assignment PIN_U7   -to I2C2_SCL
 set_location_assignment PIN_U10  -to I2C2_SDA
+
+set_location_assignment PIN_Y19  -to LED_YELLOW
+set_location_assignment PIN_Y20  -to LED_BLUE
 
 set_instance_assignment -name IO_STANDARD "1.8 V" -to LCD_R[*]
 set_instance_assignment -name IO_STANDARD "1.8 V" -to LCD_G[*]
